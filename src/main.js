@@ -5,4 +5,11 @@ import store from './store'
 
 import bootstrap from './bootstrap'
 
-createApp(App).use(store).use(router).use(bootstrap).mount('#app')
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+
+createApp(App).use(store)
+.use(router)
+.use(bootstrap)
+.provide(VueAxios, axios)
+.mount('#app')
