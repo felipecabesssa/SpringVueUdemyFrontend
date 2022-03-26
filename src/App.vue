@@ -1,6 +1,7 @@
 <template>
   <nav>
     <Menu/>
+    <hr>
   </nav>
   <router-view/>
 </template>
@@ -26,7 +27,9 @@ export default {
 
 nav {
   padding: 30px;
-
+  hr{
+    border-bottom: 1.4px solid;
+  }
   a {
     font-weight: bold;
     color: #2c3e50;
