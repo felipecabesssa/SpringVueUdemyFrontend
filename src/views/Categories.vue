@@ -3,8 +3,9 @@
     <div class="categories">
       <h1>Categories</h1>
 
-      <div class="list">
-        {{ categories }}
+      <div class="list" v-for="category in categories" :key="category.id">
+        <div class="dados">{{ category.id }}</div>
+        <div class="dados">{{ category.name }}</div>
       </div>
 
     </div>
@@ -12,7 +13,9 @@
 </template>
 
 <script>
+
 import axios from 'axios'
+
 export default {
 
   data(){
@@ -20,6 +23,7 @@ export default {
       categories:{}
     }
   },
+
   methods:{
     getCategories(){
       axios
@@ -29,6 +33,7 @@ export default {
       })
     }
   },
+
   created(){
     this.getCategories()
   }

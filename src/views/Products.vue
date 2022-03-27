@@ -14,13 +14,13 @@
         </ul>
       </div>
 
-      <div v-for="dado in dados" :key="dado.id">
+      <div v-for="producto in products" :key="producto.id">
         <ul>
           <li>
-            <div class="dados" id="id">{{ dado.id }}</div>
-            <div class="dados" id="name">{{ dado.name }}</div>
-            <div class="dados" id="amount">{{ dado.amount }}</div>
-            <div class="dados" id="price">{{ dinheiro(dado.price) }}</div>
+            <div class="dados" id="id">{{ producto.id }}</div>
+            <div class="dados" id="name">{{ producto.name }}</div>
+            <div class="dados" id="amount">{{ producto.amount }}</div>
+            <div class="dados" id="price">{{ dinheiro(producto.price) }}</div>
           </li>
         </ul>
       </div>
@@ -31,19 +31,33 @@
 
 <script>
 
-import dados from './../data/data.json'
+import axios from 'axios'
 
 export default {
   data(){
     return {
-      dados:dados
+      products:{}
     }
   },
   methods:{
+
+    getProducts(){
+      axios
+        .get('http://localhost:8081/products')
+        .then((resp) => {
+        this.products = (resp.data)
+      })
+    },
+
     dinheiro(valor){
       return 'R$ ' + valor.toFixed(2)
     }
+  },
+
+  created(){
+    this.getProducts()
   }
+
 }
 </script>
 
