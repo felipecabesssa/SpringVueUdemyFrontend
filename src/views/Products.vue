@@ -72,28 +72,33 @@ export default {
         display: flex;
         justify-content: space-between;
         border: solid 1px grey;
-        padding: 1%;
       }
       .dados{
-        padding: 0.7%;
+        padding: 0.5%;
         border-left: solid 1px grey;
         border-right: solid 1px grey;
       }
       #id{
         min-width: 10%;
+        border-left: none;
       }
       #name{
-        min-width: 35%;
+        min-width: 50%;
         color: #42b983;
+        border: none;
       }
       #descricao{
-        min-width: 35%;
+        min-width: 50%;
+        border: none;
       }
       #amount{
         min-width: 10%;
+        min-width: 80px;
       }
       #price{
         min-width: 14%;
+        border-right: none;
+        min-width: 100px;
       }
     }
   }

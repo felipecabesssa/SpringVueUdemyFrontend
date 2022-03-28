@@ -5,7 +5,7 @@
 
       <div class="list" v-for="category in categories" :key="category.id">
         <div class="dados">{{ category.id }}</div>
-        <div class="dados">{{ category.name }}</div>
+        <div class="dados"> - {{ category.name }}</div>
       </div>
 
     </div>
@@ -41,6 +41,23 @@ export default {
 
 </script>
 
-<style>
+<style lang="scss" scoped>
+
+  .categories{
+    align-items: center;
+    .list{
+      width: 50%;
+      margin-left: 22.5%;
+      align-items: center;
+      padding: 1%;
+      display: flex;
+      justify-content: center;
+      border: 1px solid grey;
+      margin: 5px auto;
+      .dados{
+        padding: 0.7%;
+      }
+    }
+  }
 
 </style>
